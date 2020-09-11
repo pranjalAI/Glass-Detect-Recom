@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block content %}
+
+<h2 align="center">Please upload your image</h2>
+<br>
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data" align="center">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;" align="center">
+        <div class="img-preview" align="center">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div align="center">
+            <button type="button" class="btn btn-primary btn-lg" id="btn-predict">Predict!</button>
+        </div>
+    </div>
+    <div align="center">
+    <div class="loader" style="display:none;" align="center"></div>
+    <h3>Detected glass will appear here..</h3>
+    <br><br>
+    <center>
+    <div class="gallery">
+        <a target="_blank" href="_blank">
+          <img src="/static/similar_images/DetectedGlass1.jpg" alt="Glass" width="900" height="400">
+        </a>
+    </div>
+    </center>
+    <br><br>
+    <h3>Similar Products will get generate after image processing</h3>
+    <h3>Please refresh your page after image processing</h3>
+    <!--<h4>Kindly, find your similar images here ../static/similar_images/</h4> -->
+     </div>
+    <br>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+</div>
+{% endblock %}
